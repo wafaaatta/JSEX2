@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JavaScript - Introduction : Exercices partie 2</title>
+    </head>
+    <body style="padding: 20px;">
+        <script>
+            // Vous rédigerez le code nécessaire à la résolution de chaque exercice (bien lire les consignes).
+            // Les mots entre chevrons (ex : <name>) correspondront à la valeur des variables associées.
+            // Pour plus de lisibilité, vous commenterez le code des exercices précédents en passant à un nouvel exercice.
+            // Le projet sera à rendre via un nouveau dépôt disponible sur votre profil GitHub.
+
+            // == Exercice 6 ==
+            // Déclarez trois variables : "name", "age" et "city" dont les valeurs seront définies par l'Utilisateur.
+            // Vous afficherez, après avoir validé les données entrées par l'Utilisateur :
+            // - "Je m'appelle <name>, j'ai <age> ans (mineur.e) et j'habite à <city>." si la valeur de "age" est inférieure à 18 
+            // - "Je m'appelle <name>, j'ai <age> ans (majeur.e) et j'habite à <city>." si la valeur de "age" est supérieure ou égale à 18 
+            // Demander à l'utilisateur de saisir son nom, son âge et sa ville
+                
+                function exerciceSix(){
+                    let name = prompt("Entrez votre nom :");
+                    let age = parseInt(prompt("Entrez votre âge :")); // Convertir l'entrée en nombre entier
+                    let city = prompt("Entrez votre ville :");
+
+                    // Vérifier si l'âge est inférieur à 18
+                    if (age < 18) {
+                        console.log(`Je m'appelle ${name}, j'ai ${age} ans (mineur.e) et j'habite à ${city}.`);
+                    } else {
+                        console.log(`Je m'appelle ${name}, j'ai ${age} ans (majeur.e) et j'habite à ${city}.`);
+                    }
+                }
+
+               // exerciceSix();
+
+            // == Exercice 7 ==
+            // Déclarez deux variables : "nb1" et "nb2" dont les valeurs seront définies par l'Utilisateur.
+            // Vous afficherez, après avoir validé les données entrées par l'Utilisateur :
+            // - "<nb1> est plus grand que <nb2>" si la valeur de "nb1" est supérieure à la valeur de "nb2"
+            // - "<nb1> est plus petit que <nb2>" si la valeur de "nb1" est inférieure à la valeur de "nb2"
+            // - "<nb1> est plus égal à <nb2>" si la valeur de "nb1" est égale à la valeur de "nb2"
+            // - un message d'erreur si les données ne sont pas valides
+            // Demander à l'utilisateur d'entrer deux nombres
+            // Demander à l'utilisateur d'entrer deux nombres
+                
+                function exerciceSept(){
+                let nb1 = parseFloat(prompt("Entrez le premier nombre :"));
+                let nb2 = parseFloat(prompt("Entrez le deuxième nombre :"));
+
+                // Vérifier si les données sont valides (s'ils sont des nombres)
+                if (!isNaN(nb1) && !isNaN(nb2)) {
+                    // Comparer les deux nombres et afficher le résultat
+                    if (nb1 > nb2) {
+                        console.log(`${nb1} est plus grand que ${nb2}`);
+                    } else if (nb1 < nb2) {
+                        console.log(`${nb1} est plus petit que ${nb2}`);
+                    } else {
+                        console.log(`${nb1} est égal à ${nb2}`);
+                    }
+                } else {
+                    // Afficher un message d'erreur si les données ne sont pas valides
+                    console.log("Veuillez entrer des nombres valides.");
+                }
+                }
+                // exerciceSept();
+            
+            // == Exercice 8 ==
+            // En utilisant des boucles, vous afficherez dans la console une demi-pyramide de 5 lignes de haut créée à partir du caractère "*".
+            // (Voir l'image demi-pyramide.jpg se trouvant dans le dossier "/img" pour plus d'informations.)
+            // 
+           
+
+            function exerciceHuit(){
+                const height= 5;
+
+            // Demi-pyramide de 5 lignes de haut
+                for (let i = 1; i <= 5; i++) {
+                    const space= ''; repeat(height-i);
+                    const start = '*'.repeat(2 * i - 1);
+                    }
+                    console.log(spacee+ stars);
+                }
+                
+                // exerciceHuit();
+                
+            // BONUS : En utilisant des boucles, vous afficherez une pyramide complète dont la hauteur est définie par l'Utilisateur.
+
+            // == Exercice 9 ==
+            // Déclarez deux variables : "nb1" et "nb2" dont les valeurs seront définies par l'Utilisateur.
+            // En utilisant des fonctions, vous permettrez à l'Utilisateur d'effectuer un calcul de base de son choix (somme, différence, produit, division).
+            // Demander à l'utilisateur de saisir deux nombres
+
+            function excerciseNine(){
+            
+            function userInput(message) {
+                let input = prompt(message);
+            while (isNaN(input)) {
+                input = prompt("Invalid input. Please enter a valid number.\n" + message);
+                }
+                return parseFloat(input);
+                }
+
+            function add(nb1, nb2) {
+                return nb1 + nb2;
+            }
+
+                function subtract(nb1, nb2) {
+                return nb1 - nb2;
+                }
+            function multiply(nb1, nb2) {
+                return nb1 * nb2;
+            }
+
+                function divide (nb1, nb2) {
+            
+            return nb1 / nb2;
+            }
+
+            let nb1 = userInput("Enter the value for nb1:");
+            let nb2 = userInput("Enter the value for nb2:");
+
+            let operation = prompt("Choose an operation:\n1. Addition\n2. Subtraction\n3. Multiplication\n4. Division");
+
+            switch (parseInt(operation)) {
+        case 1:
+            console.log(`${nb1} + ${nb2} = ${add(nb1, nb2)}`);
+            break;
+        case 2:
+            console.log(`${nb1} - ${nb2} = ${subtract(nb1, nb2)}`);
+            break;
+        case 3:
+        console.log(`${nb1} * ${nb2} = ${multiply(nb1, nb2)}`);
+            break;
+            case 4:
+        console.log(`${nb1} / ${nb2} = ${divide(nb1, nb2)}`);
+            break;
+        default:
+            console.log("Invalid operation selected.");
+        }
+        }
+        //excerciseNine();
+
+                // == Exercice 10 ==
+                // En utilisant des fonctions, vous développerez une version du jeu du Juste Prix selon les règles suivantes :
+                // - L'Utilisateur doit deviner un nombre secret ;
+                // - le nombre secret est choisi aléatoirement entre 1 et 1000 ;
+                // - l'Utilisateur est invité à deviner le nombre en 10 tentatives ;
+                // - après chaque tentative de l'Utilisateur, un indice est donné sous la forme "c'est +" ou "c'est -" ;
+                // - une fois les 10 tentatives passées, l'Utilisateur est notifié et le nombre secret lui est révélé.
+                //
+                // BONUS   : Vous permettrez à l'Utilisateur de choisir sa difficulté entre facile, normal et difficile
+                //           changeant ainsi le nombre de tentatives à, respectivement, 20, 10 et 7.
+                //
+                // BONUS 2 : Vous intégrerez un deuxième mode de jeu dans lequel les tentatives sont illimitées mais le temps imparti est limité.
+                //           Les difficultés facile, normal et difficile définiront le temps qui est imparti à, respectivement, 30 secondes, 1 minutes //           et 2 minutes.
+                
+                function excerciseTen(){
+
+                function getPriceIsRightGame(difficulty) {
+                const maxAttempts = {
+                easy: 20,
+                normal: 10,
+                difficult: 7
+            };
+
+            const timeLimit = {
+            easy: 30,
+            normal: 60,
+            difficult: 120
+            };
+
+            const secretNumber = Math.floor(Math.random() * 1000) + 1;
+            let attempts = maxAttempts[difficulty];
+            let startTime, endTime;
+
+            function startGame() {
+            console.log(`Welcome to the Price is Right Game! You have ${attempts} attempts to guess the secret number.`);
+            console.log("The secret number is between 1 and 1000.");
+
+            startTime = new Date().getTime()
+            gameLoop();
+            }
+
+            function gameLoop() {
+
+            let userGuess = parseInt(prompt("Enter your guess:"));
+            while (isNaN(userGuess) || userGuess < 1 || userGuess > 1000) {
+            userGuess = parseInt(prompt("Invalid input. Please enter a number between 1 and 1000:"));
+            }
+
+            if (userGuess === secretNumber) {
+            endGame(true);
+            } else {
+            console.log(userGuess > secretNumber ? "It's -" : "It's +");
+            attempts--;
+
+            if (attempts === 0) {
+            endGame(false);
+            } else {
+            gameLoop();
+            }
+            }
+        }
+
+            function endGame(isWinner) {
+            endTime = new Date().getTime();
+            const elapsedTime = (endTime - startTime) / 1000;
+
+            if (isWinner) {
+            console.log(`Congratulations! You guessed the secret number (${secretNumber}) in ${maxAttempts[difficulty] - attempts} attempts.`);
+            } else {
+            console.log(`Game over! You ran out of attempts. The secret number was ${secretNumber}.`);
+            }
+
+            console.log(`Total time taken: ${elapsedTime} seconds.`);
+            }
+
+            return { startGame };
+            }
+        const selectedDifficulty = prompt("Choose difficulty:\n1. Easy\n2. Normal\n3. Difficult");
+        let game;
+
+        switch (parseInt(selectedDifficulty)) {
+        case 1:
+            game = getPriceIsRightGame('easy');
+            break;
+        case 2:
+            game = getPriceIsRightGame('normal');
+            break;
+        case 3:
+            game = getPriceIsRightGame('difficult');
+            break;
+        default:
+        console.log("Invalid difficulty selected.");
+        }
+        if (game) {
+        game.startGame();
+        }
+        }
+        excerciseTen();
+
+        </script>
+    </body>
+</html>
